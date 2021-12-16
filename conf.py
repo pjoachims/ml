@@ -29,6 +29,7 @@ author = 'Per Joachims'
 # ones.
 extensions = [
     "myst_nb",
+    "sphinx_panels",
 ]
 
 jupyter_execute_notebooks = "off"
