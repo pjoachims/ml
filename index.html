@@ -26,6 +26,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -38,7 +41,7 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Neural Networks" href="neuralnets/index.html" />
+    <link rel="next" title="Supervised Learning" href="supervised-learning/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -72,11 +75,95 @@
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="neuralnets/index.html">
-   Neural Networks
+  <a class="reference internal" href="supervised-learning/index.html">
+   Supervised Learning
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="supervised-learning/classification/index.html">
+     Classification
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="supervised-learning/regression/index.html">
+     Regression
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="unsupervised-learning/index.html">
+   Unsupervised Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="unsupervised-learning/clustering/index.html">
+     Clustering
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="unsupervised-learning/dim-reduction/index.html">
+     Dimensionalty Reduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="reinforcement-learning/index.html">
+   Reinforcement Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="neuralnets/index.html">
+   Neural Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -90,8 +177,8 @@
     <a class="reference internal" href="neuralnets/cnn/index.html">
      CNN: Convolutional Neural Network
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -102,6 +189,59 @@
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bayes/index.html">
+   Bayesian Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="bayes/mcmc/index.html">
+     MCMC: Markov Chain Monte Carlo
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="optimization/index.html">
+   Optimization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="mixed/index.html">
+   Mixed
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mixed/uncertainty.html">
+     Uncertainty
+    </a>
    </li>
   </ul>
  </li>
@@ -183,7 +323,60 @@
 <h1>Well<a class="headerlink" href="#well" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="neuralnets/index.html">Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervised-learning/index.html">Supervised Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="supervised-learning/classification/index.html">Classification</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="supervised-learning/regression/index.html">Regression</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unsupervised-learning/index.html">Unsupervised Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unsupervised-learning/clustering/index.html">Clustering</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unsupervised-learning/dim-reduction/index.html">Dimensionalty Reduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement-learning/index.html">Reinforcement Learning</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neuralnets/index.html">Neural Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neuralnets/fnn/index.html">FNN: Feedforward Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neuralnets/cnn/index.html">CNN: Convolutional Neural Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neuralnets/cnn/style_transfer_torch.html">Style Transfer Using Pytorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neuralnets/cnn/style_transfer_torch.html#imports">Imports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neuralnets/cnn/style_transfer_torch.html#class-and-func-defs">Class and func defs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neuralnets/cnn/style_transfer_torch.html#run-conversion">Run conversion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bayes/index.html">Bayesian Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bayes/mcmc/index.html">MCMC: Markov Chain Monte Carlo</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optimization/index.html">Optimization</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mixed/index.html">Mixed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mixed/uncertainty.html">Uncertainty</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mixed/uncertainty.html#aleatoric-vs-epistemic-uncertainty">Aleatoric vs. epistemic uncertainty</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mixed/uncertainty.html#aleatoric-uncertainty">Aleatoric uncertainty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixed/uncertainty.html#epistemic-uncertainty">Epistemic uncertainty</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -194,10 +387,10 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="neuralnets/index.html" title="next page">
+    <a class='right-next' id="next-link" href="supervised-learning/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Neural Networks</p>
+        <p class="prev-next-title">Supervised Learning</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
