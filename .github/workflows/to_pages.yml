@@ -25,6 +25,7 @@ jobs:
           pip3 install myst_nb
           pip3 install sphinx-book-theme
           pip3 install sphinx_copybutton
+          pip3 install sphinx_panels
       
       - name: build docs
         run: |
