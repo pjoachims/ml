@@ -1,14 +1,15 @@
-Well
-====
+Collection of notes on machine learning and statistics
+======================================================
+
+This is a work in progress, which may take some time ...
 
 ```{toctree}
-
-supervised-learning/index
-unsupervised-learning/index
-reinforcement-learning/index
-neuralnets/index
-bayes/index
-optimization/index
-mixed/index
+---
+maxdepth: 1
+---
+foundation/index
+statistics/index
+machine-learning/index
+algorithms/index
 ```
 

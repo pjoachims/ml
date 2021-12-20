@@ -1,0 +1,7 @@
+Probability
+===========
+
+```{toctree}
+distribution/index
+```
+

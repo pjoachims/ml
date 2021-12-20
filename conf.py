@@ -17,6 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
+from typing import overload
+
+
 project = 'mlstat'
 copyright = '2021, Per Joachims'
 author = 'Per Joachims'
@@ -28,6 +31,7 @@ author = 'Per Joachims'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "sphinxcontrib.bibtex",
     "myst_nb",
     "sphinx_panels",
 ]
@@ -40,7 +44,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ["old/"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -48,8 +52,8 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_book_theme"
-html_title = "ML & Stat"
+html_theme = " "
+html_title = "Notes on ML & Stat"
 # html_logo = "link/to/logo"
 # html_theme_options = {
 #   "logo_only": True,
@@ -59,3 +63,8 @@ html_title = "ML & Stat"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+# -- Citation ---------------------------------------------------------------
+bibtex_bibfiles = ["test.bib"]
+bibtex_reference_style = "author_year"

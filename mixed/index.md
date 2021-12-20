@@ -1,6 +1,0 @@
-Mixed
-=====
-
-```{toctree}
-uncertainty
-```

@@ -1,0 +1,7 @@
+Inferential Statistics
+======================
+
+```{toctree}
+
+```
+
