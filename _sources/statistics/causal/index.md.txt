@@ -1,0 +1,6 @@
+Causal Inference
+================
+
+```{toctree}
+dac
+```

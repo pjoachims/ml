@@ -5,43 +5,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Notes on ML &amp; Stat</title>
+    <title>Maximum Likelihood Estimation &#8212; Notes on ML &amp; Stat</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/admonition.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/admonition.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" />
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example: linear model" href="mle_normal.html" />
+    <link rel="prev" title="Ordinary Least Squared (OLS)" href="ols.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -61,14 +65,14 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
       
       
       <h1 class="site-logo" id="site-title">Notes on ML & Stat</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -80,7 +84,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="foundation/probability/index.html">
+  <a class="reference internal" href="../../foundation/probability/index.html">
    Probability
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -90,7 +94,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="foundation/probability/distribution/index.html">
+    <a class="reference internal" href="../../foundation/probability/distribution/index.html">
      Probability Distributions
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -100,7 +104,7 @@
     </label>
     <ul>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="foundation/probability/distribution/discrete.html">
+      <a class="reference internal" href="../../foundation/probability/distribution/discrete.html">
        Discrete Probability Distributions
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -110,24 +114,24 @@
       </label>
       <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/binomial.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/binomial.html">
          Binomial Distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/poisson.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/poisson.html">
          Poisson Distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/geometric.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/geometric.html">
          Geometric Distribution
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="foundation/probability/distribution/continuous.html">
+      <a class="reference internal" href="../../foundation/probability/distribution/continuous.html">
        Continuous Probability Distributions
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -137,32 +141,32 @@
       </label>
       <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/normal.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/normal.html">
          Normal distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/student.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/student.html">
          Student’s Distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/beta.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/beta.html">
          Beta Distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/gamma.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/gamma.html">
          Gamma Distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/laplace.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/laplace.html">
          Laplace Distribution
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="foundation/probability/distribution/x2.html">
+        <a class="reference internal" href="../../foundation/probability/distribution/x2.html">
          Chi-Square Distribution
         </a>
        </li>
@@ -173,7 +177,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="foundation/optimization/index.html">
+  <a class="reference internal" href="../../foundation/optimization/index.html">
    Optimization
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -185,7 +189,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="foundation/other.html">
+  <a class="reference internal" href="../../foundation/other.html">
    Other (unsorted)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -195,7 +199,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="foundation/uncertainty/index.html">
+    <a class="reference internal" href="../../foundation/uncertainty/index.html">
      Uncertainty
     </a>
    </li>
@@ -207,9 +211,9 @@
   Statistics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="statistics/descriptive/index.html">
+  <a class="reference internal" href="../descriptive/index.html">
    Descriptive Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -220,33 +224,33 @@
   <ul class="simple">
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="statistics/inferential/index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
    Statistics Inference
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="statistics/inferential/ols.html">
+    <a class="reference internal" href="ols.html">
      Ordinary Least Squared (OLS)
     </a>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="statistics/inferential/mle.html">
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
      Maximum Likelihood Estimation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
     <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="statistics/inferential/mle_normal.html">
+      <a class="reference internal" href="mle_normal.html">
        Example: linear model
       </a>
      </li>
@@ -255,12 +259,12 @@
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="statistics/bayes/index.html">
+  <a class="reference internal" href="../bayes/index.html">
    Bayesian statistics
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="statistics/causal/index.html">
+  <a class="reference internal" href="../causal/index.html">
    Causal Inference
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -270,7 +274,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="statistics/causal/dac.html">
+    <a class="reference internal" href="../causal/dac.html">
      Directed Acyclic Graph (DAC)
     </a>
    </li>
@@ -284,7 +288,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="machine-learning/supervised-learning/index.html">
+  <a class="reference internal" href="../../machine-learning/supervised-learning/index.html">
    Supervised Learning
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -294,7 +298,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="machine-learning/supervised-learning/classification/index.html">
+    <a class="reference internal" href="../../machine-learning/supervised-learning/classification/index.html">
      Classification
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -306,7 +310,7 @@
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="machine-learning/supervised-learning/regression/index.html">
+    <a class="reference internal" href="../../machine-learning/supervised-learning/regression/index.html">
      Regression
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -320,7 +324,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="machine-learning/unsupervised-learning/index.html">
+  <a class="reference internal" href="../../machine-learning/unsupervised-learning/index.html">
    Unsupervised Learning
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -330,7 +334,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="machine-learning/unsupervised-learning/clustering/index.html">
+    <a class="reference internal" href="../../machine-learning/unsupervised-learning/clustering/index.html">
      Clustering
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
@@ -342,7 +346,7 @@
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="machine-learning/unsupervised-learning/dim-reduction/index.html">
+    <a class="reference internal" href="../../machine-learning/unsupervised-learning/dim-reduction/index.html">
      Dimensionalty Reduction
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
@@ -356,7 +360,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="machine-learning/reinforcement-learning/index.html">
+  <a class="reference internal" href="../../machine-learning/reinforcement-learning/index.html">
    Reinforcement Learning
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
@@ -368,7 +372,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="machine-learning/metrics/index.html">
+  <a class="reference internal" href="../../machine-learning/metrics/index.html">
    Metrics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
@@ -387,12 +391,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="algorithms/regression/index.html">
+  <a class="reference internal" href="../../algorithms/regression/index.html">
    Regression
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="algorithms/neural-network/index.html">
+  <a class="reference internal" href="../../algorithms/neural-network/index.html">
    Neural Networks
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
@@ -402,12 +406,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="algorithms/neural-network/bnn.html">
+    <a class="reference internal" href="../../algorithms/neural-network/bnn.html">
      Bayesian Neural Networks (BNN)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="algorithms/neural-network/cnn.html">
+    <a class="reference internal" href="../../algorithms/neural-network/cnn.html">
      Convolutional Neural Networks (CNN)
     </a>
    </li>
@@ -446,6 +450,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/statistics/inferential/mle.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
             <!-- Full screen (wrap in <a> to have style consistency -->
@@ -462,6 +483,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-idea">
+   Main Idea
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#components">
+   Components
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#likelihood-function">
+     Likelihood (function)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -470,11 +526,30 @@
         
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="tex2jax_ignore mathjax_ignore section" id="maximum-likelihood-estimation">
+<h1>Maximum Likelihood Estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main-idea">
+<h2>Main Idea<a class="headerlink" href="#main-idea" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Main Idea</p>
+<a class="full reference internal image-reference" href="../../_images/mle_main-idea.jpg"><img alt="../../_images/mle_main-idea.jpg" class="full align-center" src="../../_images/mle_main-idea.jpg" style="width: 500px;" /></a>
+</div>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="likelihood-function">
+<h3>Likelihood (function)<a class="headerlink" href="#likelihood-function" title="Permalink to this headline">¶</a></h3>
+<p>The likelihhood function <span class="math notranslate nohighlight">\(L(\theta; y)\)</span> describes join probability of observing the response <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> as a function of the parameters for the assumed model.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 
 
@@ -482,7 +557,21 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ols.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ordinary Least Squared (OLS)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mle_normal.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Example: linear model</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -503,7 +592,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

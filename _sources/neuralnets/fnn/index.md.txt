@@ -1,2 +1,0 @@
-FNN: Feedforward Neural Network
-===============================
