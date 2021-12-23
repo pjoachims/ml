@@ -2,6 +2,10 @@ Neural Networks
 ===============
 
 ```{toctree}
-fnn/index
-cnn/index
+---
+hidden: true
+glob: true
+---
+bnn
+cnn
 ```

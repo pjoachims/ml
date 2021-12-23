@@ -1,7 +1,10 @@
-Inferential Statistics
-======================
+Statistics Inference
+====================
 
 ```{toctree}
-
+---
+---
+ols
+mle
 ```
 

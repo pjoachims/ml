@@ -1,7 +1,7 @@
 # Uncertainty
 
 ```{admonition} Why should we care?
-blbalasd
+Some content
 ```
 
 ## Aleatoric vs. epistemic uncertainty
@@ -11,7 +11,7 @@ blbalasd
 ```{margin}
 Aleatoric uncertainty = inherent **noise** in the data
 ```
-Aleatoric uncertainty is an **inherent feature of the data** generating process (DGP). {cite}`1987:nelson`.
+Aleatoric uncertainty is an **inherent feature of the data** generating process (DGP).
 This type of uncertainty reflects noise in the observations, e.g., measurement errors in the data or sensor noise.
 It is independent of the amount of data we collect.
 For example, we cannot predict the realization of the measurement error of a thermometer.
@@ -21,9 +21,9 @@ Homoscedastic noise is constant for all inputs, in the sense that the variance o
 Heteroscedastic noise implies that the variance of the noise differs for inputs.
 
 ### Epistemic uncertainty
-Epistemic uncertainty or model uncertainty refers to **uncertainty in the model parameters** and is a property of the model \parencite{kendallgal2017}. I.e., multiple model parameters may "explain" the data obtained so far. Observing further data, then shrinks the set of possible explanations/parameters significantly.
+Epistemic uncertainty or model uncertainty refers to **uncertainty in the model parameters** and is a property of the model [KG17]. I.e., multiple model parameters may "explain" the data obtained so far. Observing further data, then shrinks the set of possible explanations/parameters significantly.
 That is, the more data points are available, the lower the uncertainty in the model parameters.
-We can explain away epistemic uncertainty with data \parencite{kendallgal2017}.
+We can *explain away* epistemic uncertainty with data [KG17].
 
 ### Example
 ```{tabbed} Example 1D data
@@ -40,11 +40,5 @@ Regressing $f(x) = sin(x)$ with a Gaussian process for different scenarios. In t
 
 ```{rubric} References
 ```
-
-```{eval-rst}
-.. [1] Klimm M, Warode P (2021) Parametric Computation of Minimum Cost
-       Flows with Piecewise Quadratic Costs. *Mathematics of Operations
-       Research*. Available at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf
-```
-
-[1]: http://somewebsite.org
+    
+[KG17]: Kendall, Alex, and Yarin Gal. "What uncertainties do we need in Bayesian deep learning for computer vision?" *arXiv preprint arXiv:170304977* (2017).

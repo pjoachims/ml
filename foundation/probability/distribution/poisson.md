@@ -1,2 +1,0 @@
-Poisson Distribution
-====================

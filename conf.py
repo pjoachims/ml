@@ -31,12 +31,15 @@ author = 'Per Joachims'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinxcontrib.bibtex",
     "myst_nb",
+    # "sphinxcontrib.bibtex",
     "sphinx_panels",
 ]
 
-jupyter_execute_notebooks = "off"
+# jupyter_execute_notebooks = "off"
+jupyter_exclude_patterns = [
+    
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -55,9 +58,9 @@ exclude_patterns = ["old/"]
 html_theme = "sphinx_book_theme"
 html_title = "Notes on ML & Stat"
 # html_logo = "link/to/logo"
-# html_theme_options = {
-#   "logo_only": True,
-# }
+html_theme_options = {
+}
+html_css_files = ["css/admonition.css"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -66,5 +69,5 @@ html_static_path = ['_static']
 
 
 # -- Citation ---------------------------------------------------------------
-bibtex_bibfiles = ["test.bib"]
-bibtex_reference_style = "author_year"
+# bibtex_bibfiles = ["test.bib"]
+# bibtex_reference_style = "author_year"

@@ -1,0 +1,19 @@
+div.idea.admonition {
+    background: #f2f2f2;
+}
+    div.idea.admonition>img {
+        width: 100%;
+    }
+    div.idea.admonition>.admonition-title {
+        background-color: #384D47;
+        color: white;
+    }
+
+img.full.align-center {
+    width: 100% !important;
+}
+
+div.pure-math.admonition {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
