@@ -1,0 +1,25 @@
+name: add_to_gh-pages
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: host bokeh apps on heroku
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
+      - name: set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: install and run ghp-import to push to gh-pages branch
+        run: |
+          pip3 install ghp_import
+          python3 scripts/bokeh2heroku.py
