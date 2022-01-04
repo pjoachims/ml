@@ -2,7 +2,7 @@
 
 from bokeh.layouts import column, row
 from bokeh.plotting import figure, show, curdoc
-from bokeh.models import Slider, RangeSlider, NumericInput, Label
+from bokeh.models import Slider, RangeSlider, NumericInput, Label, Div
 from scipy.stats import norm
 import numpy as np
 
@@ -65,19 +65,22 @@ plot.legend.location = "top_left"
 plot.grid.grid_line_color="white"
 
 # Set layout
-layout = row(
-    column(
-        plot, 
-        range_slider,
-        sizing_mode='scale_both',
-    ), 
-    column(
-        loc_slider, 
-        scale_slider, 
-        N_input, 
-        bins_input,
-        width=100,
-    ),
+layout = column(
+    Div(text="<h1>Probability distributions</h1>"),
+    Div(text="<h2>Normal distribution</h2>"),
+    row(
+        column(
+            plot, 
+            range_slider,
+            sizing_mode='scale_both',
+        ), 
+        column(
+            loc_slider, 
+            scale_slider, 
+            N_input, 
+            bins_input,
+            width=100,
+        ),
+    )
 )
 curdoc().add_root(column(layout))
-curdoc().title = "wabbadabba"
