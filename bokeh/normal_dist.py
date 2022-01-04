@@ -67,7 +67,7 @@ plot.grid.grid_line_color="white"
 # Set layout
 layout = column(
     Div(text="<h1>Probability distributions</h1>"),
-    Div(text="<h2>Normal distribution</h2>"),
+    Div(text="<h2 id="normal-dist">Normal distribution</h2>"),
     row(
         column(
             plot, 
