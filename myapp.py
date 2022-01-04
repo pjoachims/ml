@@ -1,37 +1,44 @@
 # myapp.py
- 
-import pandas as pd
-import geopandas as gpd
-import json
-from bokeh.models import GeoJSONDataSource 
-from bokeh.plotting import figure, curdoc
+
+from random import random
+
 from bokeh.layouts import column
- 
- 
-# Read the country borders shapefile into python using Geopandas 
-shapefile = 'data/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp'
-gdf = gpd.read_file(shapefile)[['ADMIN', 'ADM0_A3', 'geometry']]
+from bokeh.models import Button
+from bokeh.palettes import RdYlBu3
+from bokeh.plotting import figure, curdoc
 
-# Rename the columns
-gdf.columns = ['country', 'country_code', 'geometry']
- 
+# create a plot and style its properties
+p = figure(x_range=(0, 100), y_range=(0, 100), toolbar_location=None)
+p.border_fill_color = 'black'
+p.background_fill_color = 'black'
+p.outline_line_color = None
+p.grid.grid_line_color = None
 
-# Convert the GeoDataFrame to GeoJSON format so it can be read by Bokeh
-merged_json = json.loads(gdf.to_json())
-json_data = json.dumps(merged_json)
-geosource = GeoJSONDataSource(geojson=json_data)
+# add a text renderer to the plot (no data yet)
+r = p.text(x=[], y=[], text=[], text_color=[], text_font_size="26px",
+           text_baseline="middle", text_align="center")
 
+i = 0
 
-# Make the plot
-TOOLTIPS = [
-('UN country', '@country')
-]
+ds = r.data_source
 
-p = figure(title='World Map', plot_height=600 , plot_width=950, tooltips=TOOLTIPS,
-x_axis_label='Longitude', y_axis_label='Latitude')
+# create a callback that adds a number in a random location
+def callback():
+    global i
 
-p.patches('xs','ys', source=geosource, fill_color='white', line_color='black',
-hover_fill_color='lightblue', hover_line_color='black')
- 
-# This final command is required to launch the plot in the browser
-curdoc().add_root(column(p))
+    # BEST PRACTICE --- update .data in one step with a new dict
+    new_data = dict()
+    new_data['x'] = ds.data['x'] + [random()*70 + 15]
+    new_data['y'] = ds.data['y'] + [random()*70 + 15]
+    new_data['text_color'] = ds.data['text_color'] + [RdYlBu3[i%3]]
+    new_data['text'] = ds.data['text'] + [str(i)]
+    ds.data = new_data
+
+    i = i + 1
+
+# add a button widget and configure with the call back
+button = Button(label="Press Me")
+button.on_click(callback)
+
+# put the button and plot in a layout and add to the document
+curdoc().add_root(column(button, p))
