@@ -34,8 +34,8 @@ class BokehContDist:
             x_range=x_range, 
             tools='reset,pan,box_zoom, save,zoom_in, zoom_out', 
             background_fill_color="#fafafa", 
-            # sizing_mode='scale_both',
             sizing_mode='scale_width',
+            height=500,
         )
         plot.title.text_font_size = "3em"
         
@@ -67,6 +67,20 @@ class BokehContDist:
         self.sliders["xrange"] = range_slider
         
         # Sampling options
+        # -> show / autoupdate / sample button
+        sampling_checkboxes = CheckboxButtonGroup(labels=["Show", "Autoupdate"], active=[0, 1])
+        def sampling_cb_callback(attr, old, new):
+            if 0 not in self.inputs["sampling_checkboxes"].active:
+                self.plots["hist"].visible = False
+            else:
+                self.update(None, None, None)
+                self.plots["hist"].visible = True
+        sampling_checkboxes.on_change("active", sampling_cb_callback)
+        button_run = Button(label="Sample", button_type="success", align='end')
+        def cb(new):
+            return self.update(None, None, None, force_sampling=True)
+        button_run.on_click(cb)
+        # -> sample size / number of bins for hist
         N_input = Spinner(title="Sample size", value=1000, step=50, low=1)
         N_input.on_change("value", self.update)
         bins_input = Spinner(title="Number of bins", value=50, low=1, step=5)
@@ -79,20 +93,6 @@ class BokehContDist:
             ),
         )
         
-        sampling_checkboxes = CheckboxButtonGroup(labels=["Show", "Autoupdate"], active=[0, 1])
-        def sampling_cb_callback(attr, old, new):
-            if 0 not in self.inputs["sampling_checkboxes"].active:
-                self.plots["hist"].visible = False
-            else:
-                self.update(None, None, None)
-                self.plots["hist"].visible = True
-        sampling_checkboxes.on_change("active", sampling_cb_callback)
-        
-        button_run = Button(label="Sample", button_type="success", align='end')
-        def cb(new):
-            return self.update(None, None, None, force_sampling=True)
-        button_run.on_click(cb)
-        
         # Slider adjusting
         select = Select(title="Slider for", value=[*self.sliders.keys()][0], options=[*self.sliders.keys()])
         start_or_end = Select(title="Prop", value="start", options=["start", "end", "step"], align='end')
@@ -101,12 +101,12 @@ class BokehContDist:
         def cb_update(new): 
             slider = self.sliders[select.value]
             setattr(slider, start_or_end.value, new_val.value)
-            if start_or_end.value == "start" and new_val.value > getattr(slider, "value"):
-                setattr(slider, "value", new_val.value)
-            elif start_or_end.value == "end" and new_val.value < getattr(slider, "value"):
-                setattr(slider, "value", new_val.value)
+            if not isinstance(slider, RangeSlider):
+                if start_or_end.value == "start" and new_val.value > getattr(slider, "value"):
+                    setattr(slider, "value", new_val.value)
+                elif start_or_end.value == "end" and new_val.value < getattr(slider, "value"):
+                    setattr(slider, "value", new_val.value)
         button_update.on_click(cb_update)
-    
         
         self.inputs = {
             "range": range_slider,
@@ -192,10 +192,6 @@ normal = BokehContDist(
     loc=Slider(start=-10, end=10, value=0, step=.5, title="loc"),
     scale=Slider(start=0.1, end=10, value=1, step=.1, title="scale"),
 )
-# normal.add_param_sliders(
-#     loc=Slider(start=-10, end=10, value=0, step=.5, title="loc"),
-#     scale=Slider(start=0.1, end=10, value=1, step=.1, title="scale")
-# )
 
 beta = BokehContDist(
     beta.rvs, 
@@ -209,13 +205,5 @@ beta = BokehContDist(
     scale=Slider(start=0.1, end=10, value=1, step=.1, title="scale")
 )
 
-# layout = gridplot(
-#     [
-#         normal.get_layout(), 
-#         beta.get_layout()
-#     ],
-#     ncols=2,
-#     width=500,
-# )
-# curdoc().add_root(normal.get_layout())
+curdoc().add_root(normal.get_layout())
 curdoc().add_root(beta.get_layout())
